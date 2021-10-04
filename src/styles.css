@@ -1,0 +1,24 @@
+.container {
+  max-width: 80%;
+
+form {
+  margin-right: 70px;
+}
+.place {
+  color: black;
+  text-align: right;
+}
+.today {
+  position: relative;
+  left: 50px;
+}
+.conditions {
+  text-align: left;
+}
+.day {
+  text-align: center;
+}
+.todayTemperature {
+  font-size: 18px;
+  font-weight: bold;
+}
