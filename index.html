@@ -12,7 +12,7 @@ index.html
       crossorigin="anonymous"
     />
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <link href="src/styles.css" />
+    <link rel="stylesheet" href="src/styles.css"/>
   </head>
 
   <body>
@@ -24,25 +24,22 @@ index.html
       </form>
       <br>
       <div class="row actual-weather">
-          <div class=" col-2 today">
+          <div class=" col-3 today">
         <img src="src/img/sunny.png" class="img" alt="sunny" width="100px">
   
           </div>
           
-        <div class=" col-3 conditions">
-         <div class="todayTemperature"><span id="temperature">18</span><span id="units"><a href ="#" id="celsius-link">°C</a>/<a href="#" id="fahrenheit-link">°F</a></span></div>
+        <div class=" col-6 conditions">
+         <div class="todayTemperature"><span id="temperature"></span><span id="units"><a href ="#" id="celsius-link">°C</a>/<a href="#" id="fahrenheit-link">°F</a></span></div>
+          Humidity: <span id="humidity"></span>%
           <br/>
-          Humidity: <span id="humidity">85</span>%
-          <br/>
-          Wind:<span id="wind">13</span>km/h
+          Wind:<span id="wind"></span>km/h
         </div>
-        <div class=" col-6 place">
+        <div class=" col-1 place">
           <h2 id = "city">
-            Warszawa
-            <h2>
-            Sunday
             </h2>
-          <span id="description">Sunny</span>
+            <h3 id = "date"></h3>
+          <span id="description"></span>
           </div>
       </div>
       <br>
@@ -51,35 +48,35 @@ index.html
           <div class="col day">
               Mon
               <br/>
-              <img src="src/img/rain.png" alt="rain">
+              <img src="src/img/rain.png" alt="rain" width="38" height="38">
               <br/>
               16°C/12°C
           </div>
           <div class="col day">
               Tue
               <br/>
-              <img src="src/img/rain.png" alt="rain">
+              <img src="src/img/rain.png" alt="rain" width="38" height="38">
               <br/>
               18°C/8°C
             </div>
             <div class="col day">
                 Wed
                 <br/>
-                <img src="src/img/partly_cloudy.png" alt="partly_cloudy">
+                <img src="src/img/partly_cloudy.png" alt="partly_cloudy" width="38" height="38">
                 <br/>
                 18°C/11°C
               </div>
               <div class="col day">
                 Thu
               <br/>
-              <img src="src/img/rain.png" alt="rain">
+              <img src="src/img/rain.png" alt="rain" width="38" height="38">
               <br/>
               17°C/10°C
                 </div>
                 <div class="col day">
                   Fri
                     <br/>
-                    <img src="src/img/rain.png" alt="rain">
+                    <img src="src/img/rain.png" alt="rain" width="38" height="38">
                     <br/>
                     18°C/11°C
                   </div>

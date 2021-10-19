@@ -9,6 +9,8 @@ function ShowWeatherParameters(response) {
   );
   document.querySelector("#description").innerHTML =
     response.data.weather[0].description;
+  let dateElement = document.querySelector("#date");
+  dateElement.innerHTML = formatDate(response.data.dt * 1000);
 }
 function search(city) {
   let apiKey = "cb1dd2cddc779c76de3ed1ecf21ae41d";
@@ -37,30 +39,29 @@ form.addEventListener("submit", changeThecity);
 let currentLocationButton = document.querySelector("#your-location-button");
 currentLocationButton.addEventListener("click", getLocationWeather);
 
-let now = new Date();
-let hours = now.getHours();
-if (hours < 10) {
-  hours = `0${hours}`;
+function formatDate(timestamp) {
+  let now = new Date(timestamp);
+  let hours = now.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+
+  let minutes = now.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = days[now.getDay()];
+  return `${day}, ${hours}:${minutes}`;
 }
-
-let minutes = now.getMinutes();
-if (minutes < 10) {
-  minutes = `0${minutes}`;
-}
-let days = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-];
-let day = days[now.getDay()];
-
-let h3 = document.querySelector("h3");
-h3.innerHTML = `${day}, ${hours}:${minutes}`;
-
 function convertToFahrenheit(temp) {
   temp.preventDefault();
   let todayTemp = document.querySelector("#temperature");
