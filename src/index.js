@@ -11,6 +11,15 @@ function ShowWeatherParameters(response) {
     response.data.weather[0].description;
   let dateElement = document.querySelector("#date");
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  iconElement.setAttribute(
+    "alt",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].description}@2x.png`
+  );
 }
 function search(city) {
   let apiKey = "cb1dd2cddc779c76de3ed1ecf21ae41d";
