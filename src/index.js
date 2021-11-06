@@ -95,3 +95,5 @@ fahrenheit.addEventListener("click", convertToFahrenheit);
 
 let celsius = document.querySelector("#celsius-link");
 celsius.addEventListener("click", convertToCelsius);
+
+search("Zamość");
