@@ -32,3 +32,12 @@ form {
   font-size: 24px;
   font-weight: bold;
 }
+
+.todayTemperature .active {
+  color: black;
+  cursor: default;
+}
+
+.CelsiusLink .active:hover {
+  text-decoration: none;
+}

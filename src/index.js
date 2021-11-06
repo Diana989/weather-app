@@ -1,14 +1,15 @@
 function ShowWeatherParameters(response) {
   document.querySelector("#city").innerHTML = response.data.name;
-  document.querySelector("#temperature").innerHTML = Math.round(
-    response.data.main.temp
-  );
+  celsiusTemperature = response.data.main.temp;
+  document.querySelector("#temperature").innerHTML =
+    Math.round(celsiusTemperature);
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
   document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed
   );
   document.querySelector("#description").innerHTML =
     response.data.weather[0].description;
+
   let dateElement = document.querySelector("#date");
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
   let iconElement = document.querySelector("#icon");
@@ -74,13 +75,21 @@ function formatDate(timestamp) {
 function convertToFahrenheit(temp) {
   temp.preventDefault();
   let todayTemp = document.querySelector("#temperature");
-  todayTemp.innerHTML = 67;
+  celsius.classList.remove("active");
+  fahrenheit.classList.add("active");
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  todayTemp.innerHTML = Math.round(fahrenheitTemperature);
 }
 function convertToCelsius(temp) {
   temp.preventDefault();
+  celsius.classList.add("active");
+  fahrenheit.classList.remove("active");
   let todayTemp = document.querySelector("#temperature");
-  todayTemp.innerHTML = 18;
+  todayTemp.innerHTML = Math.round(celsiusTemperature);
 }
+
+let celsiusTemperature = null;
+
 let fahrenheit = document.querySelector("#fahrenheit-link");
 fahrenheit.addEventListener("click", convertToFahrenheit);
 
