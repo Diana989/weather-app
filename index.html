@@ -12,39 +12,72 @@ index.html
       crossorigin="anonymous"
     />
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <link rel="stylesheet" href="src/styles.css"/>
+    <link rel="stylesheet" href="src/styles.css" />
   </head>
 
   <body>
     <div class="container">
       <form>
-        <input type="text" id="change-city" placeholder= "Change the city" autocomplete="off" autofocus= "on">
-      <button type ="submit" class="btn btn-success">Search</button>
-      <button class="btn btn-success" id="your-location-button">Your Location</button>
+        <input
+          type="text"
+          id="change-city"
+          placeholder="Change the city"
+          autocomplete="off"
+          autofocus="on"
+        />
+        <button type="submit" class="btn btn-success">Search</button>
+        <button class="btn btn-success" id="your-location-button">
+          Your Location
+        </button>
       </form>
-      <br>
+      <br />
       <div class="row actual-weather">
-          <div class=" col-3 today">
-        <img src="" class="img" alt="" width="100px" id="icon">
-  
+        <div class="col-3 today">
+          <img src="" class="img" alt="" width="100px" id="icon" />
+        </div>
+        <div class="col-3 conditions">
+          <div class="todayTemperature">
+            <span id="temperature"></span
+            ><span id="units"
+              ><a href="#" id="celsius-link" class="active">°C</a>/<a
+                href="#"
+                id="fahrenheit-link"
+                >°F</a
+              ></span
+            >
           </div>
-          
-        <div class=" col-3 conditions">
-         <div class="todayTemperature"><span id="temperature"></span><span id="units"><a href ="#" id="celsius-link"  class="active">°C</a>/<a href="#" id="fahrenheit-link">°F</a></span></div>
           Humidity: <span id="humidity"></span>%
-          <br/>
+          <br />
           Wind: <span id="wind"></span>km/h
         </div>
-        <div class=" col-5 place">
-          <h2 id = "city">
-            </h2>
-            <h3 id = "date"></h3>
+    
+        <div class="col-5 place">
+          <h2 id="city"></h2>
+          <h3 id="date"></h3>
           <span id="description"></span>
-          </div>
+        </div>
       </div>
-                    <br/>
-                  <a href="https://github.com/Diana989/weather-app">Open-source code </a> by Diana Chmielowiec
-                  </div>
+        <div class="weather-forecast">
+          <div class="row">
+            <div class="col-2">
+              <div class="weather-forecast-date">Thu</div>
+              <img
+                src="http://openweathermap.org/img/wn/04n@2x.png"
+                alt=""
+                width="42"
+              />
+              <div class="weather-forecast-temperatures">
+                <span class="weather-forecast-temperatures-max"> 18° </span>
+                <span class="weather-forecast-temperatures-min"> 12° </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <br />
+        <a href="https://github.com/Diana989/weather-app">Open-source code </a>
+        by Diana Chmielowiec
+      </div>
     </div>
     <script src="src/index.js"></script>
   </body>
